@@ -236,12 +236,17 @@ def publish(
     location: Annotated[
         str, typer.Argument(help="The location (url or path) of the data contract yaml.")
     ] = "datacontract.yaml",
+    url: Annotated[
+        str,
+        typer.Option(help="The url to publish the data contract."),
+    ] = "https://api.datamesh-manager.com",
 ):
     """
     Publish the data contract to the Data Mesh Manager.
     """
     publish_to_datamesh_manager(
         data_contract=DataContract(data_contract_file=location),
+        publish_url=url,
     )
 
 

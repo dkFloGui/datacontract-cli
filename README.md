@@ -938,7 +938,8 @@ datacontract import --format glue --source <database_name>
 │   location      [LOCATION]  The location (url or path) of the data contract yaml. [default: datacontract.yaml]             │
 ╰────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
 ╭─ Options ──────────────────────────────────────────────────────────────────────────────────────────────────────────────────╮
-│ --help          Show this message and exit.                                                                                │
+│ --url           TEXT  The url to publish the data contract. [default: https://api.datamesh-manager.com]                    │
+│ --help                Show this message and exit.                                                                          │
 ╰────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
 ```
 

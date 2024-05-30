@@ -5,12 +5,12 @@ import requests
 from datacontract.data_contract import DataContract
 
 
-def publish_to_datamesh_manager(data_contract: DataContract):
+def publish_to_datamesh_manager(data_contract: DataContract, publish_url: str):
     try:
         headers = {"Content-Type": "application/json", "x-api-key": _require_datamesh_manager_api_key()}
         spec = data_contract.get_data_contract_specification()
         id = spec.id
-        url = "https://api.datamesh-manager.com/api/datacontracts/{0}".format(id)
+        url = "{0}/api/datacontracts/{1}".format(publish_url, id)
         request_body = spec.model_dump_json().encode("utf-8")
         response = requests.put(
             url=url,
